@@ -56,7 +56,6 @@ if __name__ == "__main__":
     sorted_list = sort_list(word_list)
     print(sorted_list)
 
-    # Guardar el resultado en un archivo de salida
     output_filename = DEFAULT_OUTPUT_FILENAME
     save_to_file(output_filename, sorted_list)
     print(f"Las palabras ordenadas se han guardado en el archivo {output_filename}")
