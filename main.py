@@ -8,6 +8,7 @@ import sys
 
 DEFAULT_FILENAME = "words.txt"
 DEFAULT_DUPLICATES = False
+DEFAULT_OUTPUT_FILENAME = "sorted_words.txt"
 
 
 def sort_list(items, ascending=True):
@@ -19,6 +20,12 @@ def sort_list(items, ascending=True):
 
 def remove_duplicates_from_list(items):
     return list(set(items))
+
+
+def save_to_file(filename, items):
+    with open(filename, "w") as file:
+        for item in items:
+            file.write(f"{item}\n")
 
 
 if __name__ == "__main__":
@@ -46,4 +53,10 @@ if __name__ == "__main__":
     if remove_duplicates:
         word_list = remove_duplicates_from_list(word_list)
 
-    print(sort_list(word_list))
+    sorted_list = sort_list(word_list)
+    print(sorted_list)
+
+    # Guardar el resultado en un archivo de salida
+    output_filename = DEFAULT_OUTPUT_FILENAME
+    save_to_file(output_filename, sorted_list)
+    print(f"Las palabras ordenadas se han guardado en el archivo {output_filename}")
