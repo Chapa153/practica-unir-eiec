@@ -26,7 +26,7 @@ MESSAGES = {
         "file_not_exist": "The file does not exist",
     }
 }
-
+#este comentario lo puso Camilo
 def sort_list(items, ascending=True):
     if not isinstance(items, list):
         raise RuntimeError(f"Cannot sort {type(items)}")
